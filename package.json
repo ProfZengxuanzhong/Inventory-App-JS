@@ -1,21 +1,18 @@
-  "devDependencies": {
-    "@babel/core": "^7.25.9",
-    "@babel/preset-env": "^7.25.9",
-    "babel-loader": "^9.2.1",
-    "css-loader": "^7.1.2",
-    "loader": "^2.1.1",
-    "style": "^0.0.3",
-    "tailwindcss": "^3.4.13",
-    "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0"
-  },
-
+{
   "name": "inventory-app",
   "version": "1.0.0",
   "description": "",
   "main": "tailwind.config.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/css/tailwind.css -o ./public/build/style.css --watch",
+    "tailwind-minify": "npx tailwindcss -i ./src/css/tailwind.css -o ./public/build/style.css --minify",
+    "app-babel": "babel src/js/app.js -o public/build/babel/app.js --presets @babel/preset-env",
+    "categoryView-babel": "babel src/js/categoryView.js -o public/build/babel/categoryView.js --presets @babel/preset-env",
+    "productView-babel": "babel src/js/productView.js -o public/build/babel/productView.js --presets @babel/preset-env",
+    "storage-babel": "babel src/js/storage.js -o public/build/babel/storage.js --presets @babel/preset-env",
+    "build": "webpack",
+    "test": "jest --coverage"
+  },
   "dependencies": {
     "@babel/cli": "^7.25.7",
     "ansi-regex": "^6.1.0",
@@ -108,25 +105,26 @@
     "wrap-ansi-cjs": "^7.0.0",
     "yaml": "^2.5.1"
   },
-  "scripts": {
-    "dev": "npx tailwindcss -i ./src/css/tailwind.css -o ./public/build/style.css --watch",
-    "tailwind-minify": "npx tailwindcss -i ./src/css/tailwind.css -o ./public/build/style.css --minify",
-    "app-babel": "babel src/js/app.js -o public/build/babel/app.js --presets @babel/preset-env",
-    "categoryView-babel": "babel src/js/categoryView.js -o public/build/babel/categoryView.js --presets @babel/preset-env",
-    "productView-babel": "babel src/js/productView.js -o public/build/babel/productView.js --presets @babel/preset-env",
-    "storage-babel": "babel src/js/storage.js -o public/build/babel/storage.js --presets @babel/preset-env",
-    "build": "webpack",
-    "test": "jest --coverage"
+  "devDependencies": {
+    "@babel/core": "^7.25.9",
+    "@babel/preset-env": "^7.25.9",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "loader": "^2.1.1",
+    "style": "^0.0.3",
+    "tailwindcss": "^3.4.13",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
   },
-  "author": "Abolfazl Rahmati",
-  "license": "MIT"
-
-"jest": {
+  "jest": {
     "testEnvironment": "jsdom",
     "collectCoverageFrom": [
       "src/js/**/*.js",
       "!src/js/**/*.test.js"
     ]
-  }
-
+  },
+  "author": "Abolfazl Rahmati",
+  "license": "MIT"
 }
