@@ -131,4 +131,6 @@
       "!src/js/**/*.test.js"
     ]
   },
+  "author": "Abolfazl Rahmati",
+  "license": "MIT"
 }
